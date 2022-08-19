@@ -1,0 +1,186 @@
+.outputToolbox {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background-secondary);
+    position: fixed;
+    border: 10px solid var(--color-background-secondary);
+    opacity: 0;
+    border-radius: 7px;
+    max-width: 350px;
+    top: 140px;
+    right: 140px;
+    transition: opacity 300ms ease;
+    text-align: center;
+
+    .sessionInfo {
+        display: table;
+
+        .sessionEntry {
+            display: table-row;
+            text-align: right;
+            gap: 5px;
+        }
+
+        .sessionSpanLabel {
+            display: table-cell;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 25px;
+        }
+
+        .sessionSpan {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: table-cell;
+        }
+    }
+}
+
+
+
+
+
+.playerlevels {
+    display: table;
+    margin-left: 120px;
+
+    h3 {
+        display: table-caption
+    }
+}
+
+.dinolevels {
+    display: table;
+    margin-left: 120px;
+
+    h3 {
+        display: table-caption
+    }
+}
+
+.wildDinolevels {
+    display: table;
+    margin-left: 120px;
+
+    h3 {
+        display: table-caption
+    }
+}
+
+.referenceInnerTableWDL {
+    display: table;
+    margin-left: 120px;
+    margin-top: 8px;
+    border: 1px solid var(--color-input-background-disabled);
+    border-radius: 5px;
+
+    .referenceSpan {
+        position: relative;
+        top: -12px;
+        right: 120px;
+        padding-right: 5px;
+        padding-left: 5px;
+        background-color: var(--color-background);
+    }
+
+    .innerContentWDL {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        span {
+            font-size: medium;
+        }
+    }
+}
+
+.engramsGen {
+    display: table;
+    margin-left: 120px;
+    padding-bottom: 200px;
+
+    h3 {
+        display: table-caption
+    }
+}
+
+.defaultInput {
+    display: table-cell;
+    max-width: 150px;
+    height: 20px;
+    -webkit-padding: 0.4em 0;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-color: var(--color-input-background);
+    color: var(--color-text);
+    text-align: center;
+    
+    &:disabled {
+        outline: none;
+        color: rgb(255, 255, 255);
+        background-color: var(--color-input-background-disabled);
+    }
+
+    &:focus {
+        outline: none;
+        border: 2px solid var(--color-input-focus);
+        transition: all 0.2s;
+    }
+}
+
+.smallInput {
+    max-width: 60px;
+}
+
+.readonlyInput {
+    background-color: var(--color-input-background-disabled);
+}
+
+.inputDiv {
+    display: table-row;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    gap: 5px;
+
+    span {
+        display: table-cell;
+        margin-top: 5px;
+        padding-right: 50px;
+        user-select: none;
+    }
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.displayCheckbox {
+    display: flex;
+    background-color: var(--color-header-background);
+    color: var(--color-header-text);
+    margin-left: 118px;
+    margin-top: 15px;
+    max-width: 450px;
+    user-select: none;
+}
+
+.material-symbols-sharp {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+}
+
+.display {
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
