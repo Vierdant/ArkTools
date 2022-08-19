@@ -24,7 +24,7 @@ export class GameFile {
     }
 
     public writeMultiple(...line: string[]) {
-        for (const entry of line) {
+        for (let entry of line) {
             this.lines.push(entry + "\n")
         }
     }
@@ -68,7 +68,7 @@ export class GameUserFile {
     }
 
     public writeMultiple(...line: string[]) {
-        for (const entry of line) {
+        for (let entry of line) {
             this.lines.push(entry + "\n")
         }
     }
