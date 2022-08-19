@@ -27,13 +27,13 @@ export class PlayerLevelsGen {
     }
 
     public async run() {
-        let levelSet: string[] = [];
+        const levelSet: string[] = [];
         let xp: number = 0;
         let overrideMax = "OverrideMaxExperiencePointsPlayer=";
         let rampOverrieds = "LevelExperienceRampOverrides=(";
         // main loop
         for (let i = 0; i <= this.maxLevel; i++) {
-            let inceasePercentage = this.getRandomInt(this.IncreasePercentMin, this.IncreasePercentMax);
+            const inceasePercentage = this.getRandomInt(this.IncreasePercentMin, this.IncreasePercentMax);
             
             // increase with baseValue
             xp = this.baseValue + xp;
@@ -41,7 +41,7 @@ export class PlayerLevelsGen {
             xp = (inceasePercentage / 100) * xp + xp;
             // increase with advanced percentage value
             if (this.AIincreaseAfterLvl != -1 && i > this.AIincreaseAfterLvl) {
-                let advancedPercentage = this.getRandomInt(this.AIncreasePercentMin, this.AIncreasePercentMax);
+                const advancedPercentage = this.getRandomInt(this.AIncreasePercentMin, this.AIncreasePercentMax);
                 xp = (advancedPercentage / 100) * xp + xp;
             }
             // ensure floored values
@@ -90,13 +90,13 @@ export class DinoLevelsGen {
     }
 
     public async run() {
-        let levelSet: string[] = [];
+        const levelSet: string[] = [];
         let xp: number = 0;
         let overrideMax = "OverrideMaxExperiencePointsDino=";
         let rampOverrieds = "LevelExperienceRampOverrides=(";
         // main loop
         for (let i = 0; i <= this.maxLevel; i++) {
-            let inceasePercentage = this.getRandomInt(this.IncreasePercentMin, this.IncreasePercentMax);
+            const inceasePercentage = this.getRandomInt(this.IncreasePercentMin, this.IncreasePercentMax);
             
             // increase with baseValue
             xp = this.baseValue + xp;
@@ -104,7 +104,7 @@ export class DinoLevelsGen {
             xp = (inceasePercentage / 100) * xp + xp;
             // increase with advanced percentage value
             if (this.AIincreaseAfterLvl != -1 && i > this.AIincreaseAfterLvl) {
-                let advancedPercentage = this.getRandomInt(this.AIncreasePercentMin, this.AIncreasePercentMax);
+                const advancedPercentage = this.getRandomInt(this.AIncreasePercentMin, this.AIncreasePercentMax);
                 xp = (advancedPercentage / 100) * xp + xp;
             }
             // ensure floored values
