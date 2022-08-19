@@ -7,7 +7,7 @@
     "distDir": "../public"
   },
   "package": {
-    "productName": "gamemodtoolbox",
+    "productName": "GMToolBox",
     "version": "0.1.0"
   },
   "tauri": {
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "me.vierdant.gmtoolbox",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
