@@ -4,7 +4,7 @@
 	import StartPage from "./routes/StartPage.svelte"
 	import ArkLevelEditorTool from "./routes/arktools/LevelsEditorTool.svelte"
 	
-    let toggleStates: boolean[] = [ false, true ]
+    let toggleStates: boolean[] = [ true, false ]
 
 	const togglePages = (details) => {
 		toggleStates = Array.from(details.detail)

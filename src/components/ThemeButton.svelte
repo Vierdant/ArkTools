@@ -1,7 +1,5 @@
 <script lang="ts">
 	let darkMode = false;
-	
-	document.body.classList.toggle('dark-theme-variables')
 
     const toggle = () => {
 		darkMode = !darkMode

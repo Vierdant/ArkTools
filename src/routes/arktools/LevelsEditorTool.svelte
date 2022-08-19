@@ -1,7 +1,10 @@
 <style lang="scss" src="./styles/LevelsEditorToolStyle.scss"></style>
-<script lang="ts" >
+<script lang="ts">
+    import { open } from "@tauri-apps/api/dialog";
     import Toolbar from "../../global/Toolbar.svelte"
     import { fade } from 'svelte/transition';
+    import { GameFile, GameUserFile } from "./ArkFiles";
+    import { DinoLevelsGen, EngramsGen, PlayerLevelsGen, WildDinoGen } from "./scripts/LevelsEditorToolBox";
     import Infobox from "../../components/Infobox.svelte";
     import MainButton from "../../components/MainButton.svelte";
 
@@ -79,6 +82,40 @@
     let engramSkippable: number;
     let engramSkippableUntil: number;
 
+    let genPath: string;
+
+    const generate = async () => {
+        const path = await open({
+            directory: true,
+            multiple: false,
+            filters: [{ name: "Config", extensions: ["yml", "json"] }],
+        });
+        if (!Array.isArray(path) && path !== null) genPath = path;
+        
+        let gameFile = new GameFile(genPath);
+        let gameUserFile = new GameUserFile(genPath);
+        if (validPlayerLevels) {
+            await new PlayerLevelsGen(gameFile, playerMaxLevel, playerBaseValue, playerIPercentMin, playerIPercentMax, playerAIPercentMin, playerAIPercentMax, playerAIncreaseLvl).run();
+            gameFile.write("\n");
+        }
+        if (validDinoLevels) {
+            await new DinoLevelsGen(gameFile, dinoMaxLevel, dinoBaseValue, dinoIPercentMin, dinoIPercentMax, dinoAIPercentMin, dinoAIPercentMax, dinoAIncreaseLvl).run();
+            gameFile.write("\n");
+        }
+        if (validWildDinoLevels) {
+            await new WildDinoGen(gameUserFile, readOnlyWildOverrideOfficialDifficulty).run();
+        }
+        if (validEngrams) {
+            await new EngramsGen(gameFile, playerMaxLevel, engramBaseValue, engramIncreaseValue, engramMultiplyIncreaseValue, engramAIncreaseValue, engramAIncreaseLvl, engramMultiplyAIncreaseValue, engramSkippable, engramSkippableUntil).run();
+        }
+        
+
+        gameFile.update();
+        gameUserFile.update();
+    }
+
+
+
     $: {
         /* PLAYER LEVELS */
         // ensure no illegal values
@@ -133,7 +170,7 @@
                             && ((dinoIPercentMin != undefined && dinoIPercentMax != undefined) || (dinoIPercentMin == undefined && dinoIPercentMax == undefined)) 
                             && ((dinoAIncreaseLvl != undefined && dinoAIPercentMin != undefined && dinoAIPercentMax != undefined) || (dinoAIncreaseLvl == undefined && dinoAIPercentMin == undefined && dinoAIPercentMax == undefined));
         validWildDinoLevels = (wildDinoMaxLevel != null && wildDinoMaxLevel != 150)
-        validEngrams = (engramBaseValue != undefined)
+        validEngrams = (engramBaseValue != undefined && validPlayerLevels)
                             && ((engramIncreaseValue != undefined) || (engramIncreaseValue == undefined))
                             && ((engramSkippable != undefined) || (engramSkippable == undefined))
                             && ((engramAIncreaseLvl != undefined && engramAIncreaseValue != undefined) || (engramAIncreaseLvl == undefined && engramAIncreaseValue == undefined));
@@ -384,5 +421,5 @@
             </div>
         {/if}
     </div>
-    <MainButton type="secondary" buttonName="Generate" />
+    <MainButton type="secondary" buttonName="Generate" on:click={generate} />
 </div>
