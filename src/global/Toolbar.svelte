@@ -12,7 +12,7 @@
             <span class="material-symbols-sharp">
                 videogame_asset
                 </span>
-            <span> Game: <a target="_blank" href={link}>{name}</a></span>
+            <span> Wiki: <a target="_blank" href={link}>{name}</a></span>
         {/if}
     </div>
     <div class="right">

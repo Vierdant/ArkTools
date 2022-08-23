@@ -1,12 +1,12 @@
-<style lang="scss" src="./styles/LevelsEditorToolStyle.scss"></style>
+<style lang="scss" src="./LevelsEditor.scss"></style>
 <script lang="ts">
     import { open } from "@tauri-apps/api/dialog";
-    import Toolbar from "../../global/Toolbar.svelte"
+    import Toolbar from "../../../global/Toolbar.svelte"
     import { fade } from 'svelte/transition';
-    import { GameFile, GameUserFile } from "./ArkFiles";
-    import { DinoLevelsGen, EngramsGen, PlayerLevelsGen, WildDinoGen } from "./scripts/LevelsEditorToolBox";
-    import Infobox from "../../components/Infobox.svelte";
-    import MainButton from "../../components/MainButton.svelte";
+    import { GameFile, GameUserFile } from "../ArkFiles";
+    import { DinoLevelsGen, EngramsGen, PlayerLevelsGen, WildDinoGen } from "./LevelsEditor";
+    import Infobox from "../../../components/Infobox.svelte";
+    import MainButton from "../../../components/MainButton.svelte";
 
     /* DISPLAY CONTROLS */
     let displayPlayerLevels: boolean = true;
@@ -185,8 +185,8 @@
     }
 </script>
 
-<Toolbar link="https://survivetheark.com" name="Ark: Survival Evolved"/>
-<h1>Ark: Levels Editor</h1>
+<Toolbar link="https://survivetheark.com" name="How to use the levels editor"/>
+<h1>Levels Editor</h1>
 
 <div class="displayCheckbox" on:click={() => displayPlayerLevels = !displayPlayerLevels}>
     <span class="material-symbols-sharp">

@@ -26,7 +26,7 @@
             <NavComponent activeTool={toggleStates[1]} toolId="1" on:toggleChange={handleToggles}>
                 <h3><span class="material-symbols-sharp">
                     arrow_forward_ios
-                    </span> Ark: Levels</h3>
+                    </span> Levels Editor</h3>
             </NavComponent>
             <NavComponent activeTool={toggleStates[2]} toolId="1" on:toggleChange={handleToggles}>
                 <h3><span class="material-symbols-sharp">

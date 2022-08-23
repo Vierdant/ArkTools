@@ -1,11 +1,11 @@
 [package]
-name = "app"
+name = "arktools"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "An application containing useful tools for ark"
+authors = ["Vierdant"]
 license = ""
 repository = ""
-default-run = "app"
+default-run = "arktools"
 edition = "2021"
 rust-version = "1.57"
 

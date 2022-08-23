@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Sidenav from "./global/Sidenav.svelte";
 	
-	import StartPage from "./routes/StartPage.svelte"
-	import ArkLevelEditorTool from "./routes/arktools/LevelsEditorTool.svelte"
+	import StartPage from "./pages/StartPage.svelte"
+	import ArkLevelEditorTool from "./pages/tools/levelseditor/LevelsEditor.svelte"
 	
     let toggleStates: boolean[] = [ true, false ]
 

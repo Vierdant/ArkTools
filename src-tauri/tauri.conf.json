@@ -7,7 +7,7 @@
     "distDir": "../public"
   },
   "package": {
-    "productName": "GMToolBox",
+    "productName": "ArkTools",
     "version": "0.1.0"
   },
   "tauri": {
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "me.vierdant.gmtoolbox",
+      "identifier": "me.vierdant.arktools",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -58,7 +58,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "GameMod Toolbox",
+        "title": "ArkTools",
         "width": 800
       }
     ]
